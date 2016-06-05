@@ -1,0 +1,33 @@
+############################# Note by new #############################
+
+### The standard JSF equivalent to the PrimeFaces specific 
+PrimeFaces === >  Standard JSF
+process    -----  execute
+update     -----  render
+
+Component     	Submit     			Refresh
+f:ajax   		execute="@this"		render="@none"
+p:ajax			process="@this"		update="@none"
+P:commandXXX	process="@form"		update="@none"
+
+### scope type @all for process equals @form
+
+### Regirect Page
+?faces-redirect=true
+
+### Update element will be updated when the server respond back to you request.
+
+### best answer for reference client id of component
+http://stackoverflow.com/questions/8634156/how-to-find-out-client-id-of-component-for-ajax-update-render-cannot-find-compo
+
+
+### NamingContainer ###
+# Standard JSF
+<h:form />
+<h:dataTable />
+
+# PrimeFaces
+<p:tabView />
+
+########################################################################
+ 

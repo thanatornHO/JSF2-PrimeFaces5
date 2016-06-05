@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>JSF 2.0 Hello World</title>
+</h:head>
+<h:body bgcolor="white">
+	<h:form id="form">
+		<div class="ui-fluid">
+			<p:panelGrid columns="2" layout="grid" columnClasses="ui-grid-col-2, ui-grid-col-3" style="border:0px !important; background:none;">
+				<h:outputText value="Enter Name" />
+				<p:inputText id="txtName" value="#{user.name}" />
+
+				<h:outputText value="Perform form 2" />
+				<p:commandLink update=":form2:result1">Command Link</p:commandLink>
+
+				<h:outputText value="Perform show data" />
+				<h:commandButton value="Command Button">
+					<f:ajax execute="txtName" render=":result2" />
+				</h:commandButton>
+			</p:panelGrid>
+		</div>
+	</h:form>
+
+	<br/><h4>Form 2</h4>
+	
+	<!-- show data -->
+	<h:form id="form2">
+		<p:panelGrid columns="2" layout="grid" columnClasses="ui-grid-col-2, ui-grid-col-10">
+			<h:outputText value="Name" />
+			<h:outputText id="result1" value="#{user.name}" />
+		</p:panelGrid>
+	</h:form>
+	
+	<br/><h4>No form</h4>
+	
+	<p:panelGrid columns="2" layout="grid" columnClasses="ui-grid-col-2, ui-grid-col-10">
+		<h:outputText value="Name" />
+		<h:outputText id="result2" value="#{user.name}" />
+	</p:panelGrid>
+	
+</h:body>
+</html>
