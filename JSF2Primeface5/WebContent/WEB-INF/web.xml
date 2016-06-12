@@ -5,6 +5,19 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>JSF2Primeface5</display-name>
 
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+
+
 	<!-- Change to "Production" when you are ready to deploy -->
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
